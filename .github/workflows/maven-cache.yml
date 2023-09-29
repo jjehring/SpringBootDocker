@@ -34,7 +34,7 @@ jobs:
       with:
         push: true
         context: .
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/springboot:latest 
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/springbootdocker:latest 
 
   deploy: 
     runs-on: ubuntu-latest
@@ -57,4 +57,4 @@ jobs:
        scp: |
         'Dockerfile' => /tmp/Docker
        last_ssh: |
-        docker run -d ${{ secrets.DOCKERHUB_USERNAME }}/springboot:latest 
+        docker run -d ${{ secrets.DOCKERHUB_USERNAME }}/springbootdocker:latest 
